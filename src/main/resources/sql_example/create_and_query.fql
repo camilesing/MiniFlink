@@ -1,0 +1,23 @@
+CREATE TABLE kafkaTable (
+  `f1` BIGINT,
+  `f2` BIGINT,
+  `f3` STRING,
+  `ts` TIMESTAMP_LTZ(3) METADATA FROM 'timestamp'
+) WITH (
+  'connector' = 'kafka',
+  'topic' = 'user_behavior',
+  'properties.bootstrap.servers' = 'localhost:9092',
+  'properties.group.id' = 'testGroup',
+  'scan.startup.mode' = 'earliest-offset',
+  'format' = 'csv'
+);
+
+
+SELECT
+  f1,
+  f2,
+  f3
+FROM
+  kafkaTable
+WHERE
+  f1 <= 5;
