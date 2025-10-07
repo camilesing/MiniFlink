@@ -1,8 +1,0 @@
-SELECT
-  f1,
-  f2,
-  f3
-FROM
-  t1
-WHERE
-  f1 <= 5;

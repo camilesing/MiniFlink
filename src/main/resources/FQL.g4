@@ -579,7 +579,7 @@ primaryExpression
     | functionName LR_BRACKET setQuantifier? functionParam RR_BRACKET  filterClause?                             #functionCallFilter
     | value=primaryExpression LS_BRACKET index=valueExpression RS_BRACKET                                   #subscript
     | identifier                                                                               #columnReference
-    | dereferenceDefinition                                                                                      #dereference
+    | dereferenceDefinition                                                                    #dereference
     | LR_BRACKET expression RR_BRACKET        #parenthesizedExpression
     | LR_BRACKET RR_BRACKET          #emptyExpression
     | complexDataTypeExpression                                                                 # complexDataTypeFieldExpression
@@ -1666,6 +1666,5 @@ createTable
     ;
 
 overWindowItem
-    : primaryExpression KW_OVER windowSpec KW_AS? identifier #flink_commn
-    | primaryExpression KW_OVER errorCapturingIdentifier KW_AS? identifier #flink_common2
+    : primaryExpression KW_OVER windowSpec KW_AS? identifier
     ;

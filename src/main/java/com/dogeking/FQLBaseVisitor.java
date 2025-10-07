@@ -1357,12 +1357,5 @@ public class FQLBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements FQ
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFlink_commn(FQLParser.Flink_commnContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitFlink_common2(FQLParser.Flink_common2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitOverWindowItem(FQLParser.OverWindowItemContext ctx) { return visitChildren(ctx); }
 }
